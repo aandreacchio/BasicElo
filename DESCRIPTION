@@ -1,0 +1,18 @@
+Package: BasicElo
+Title: Elo Ratings Package for AFL
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Anton",
+           family = "Andreacchio",
+           role = c("aut", "cre"),
+           email = "antonandreacchio@gmail.com")
+Description: Basic Elo functions as a foundation for AFL subsystem research.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 2.1.0)
+VignetteBuilder: knitr

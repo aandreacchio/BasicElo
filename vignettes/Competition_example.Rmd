@@ -1,0 +1,54 @@
+---
+title: "Competition_example"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Competition_example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BasicElo)
+```
+
+
+## Create some data
+
+First we will check that the input ratings provide us with an expected probability of team A winning with a scaling constant of 400.
+
+```{r}
+R_a <- 1600
+R_b <- 1400
+s <- 400
+```
+
+## Using the `expected()` function
+
+The `expected()` function will three numeric vectors
+
+$$
+R_a,R_b,s
+$$
+
+and return the expected probability of team A winning the game:
+
+$$
+E = \frac{1}{1+10^{(R_b-R_a)/s}}
+$$
+
+```{r}
+expected(R_a,R_b,s)
+```
+
+We can check this is correct with 
+
+$$
+E= \frac{1}{1+10^{(R_b-R_a)/s}} = \frac{1}{1+10^{(1400-1600)/400}} = 75.97\%.
+$$
